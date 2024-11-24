@@ -6,6 +6,7 @@ import SecCon from "./SecCon/SecCon";
 import "./Main.css";
 
 const Main = () => {
+  
   const [area, setArea] = useState("");
   const [data, setData] = useState(null);
 
@@ -17,8 +18,8 @@ const Main = () => {
       alert("Please enter a location");
       return;
     }
-
-    let API_KEY = "45b5f7cfa8753937d709872dde0f8280";
+    
+    let API_KEY = import.meta.env.VITE_API_KEY;
     try {
       const response = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(
