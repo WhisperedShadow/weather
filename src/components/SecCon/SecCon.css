@@ -1,0 +1,8 @@
+.sec{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.sec p{
+    margin-top: 3rem;
+    padding-left: 3rem;
+}
