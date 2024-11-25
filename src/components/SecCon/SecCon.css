@@ -3,6 +3,10 @@
     grid-template-columns: 1fr 1fr;
 }
 .sec p{
-    margin-top: 3rem;
+    margin-top: 2rem;
     padding-left: 3rem;
+}
+.sec p:hover{
+    scale: 1.2;
+    font-weight: 600;
 }

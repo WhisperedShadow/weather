@@ -6,8 +6,13 @@
 }
 .icon{
     margin-left: 2.5rem;
-    width: 150px;
+    width: 180px;
     height: auto;
 }.main div h1{
     margin-top: 2rem;
+}
+
+
+.main div *:hover{
+    scale : 1.2;
 }

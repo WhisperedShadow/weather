@@ -21,4 +21,8 @@ input{
     display: inline;
 }input:focus{
     outline: none;
+    scale: 1.05;
+}
+.Search:hover{
+    scale: 1.5;
 }

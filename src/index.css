@@ -13,6 +13,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+*{
+  transition: all 0.25s ease-in-out;
+}
+
+
 a {
   font-weight: 500;
   color: #646cff;

@@ -6,7 +6,6 @@ import SecCon from "./SecCon/SecCon";
 import "./Main.css";
 
 const Main = () => {
-  
   const [area, setArea] = useState("");
   const [data, setData] = useState(null);
 
@@ -18,7 +17,7 @@ const Main = () => {
       alert("Please enter a location");
       return;
     }
-    
+
     let API_KEY = import.meta.env.VITE_API_KEY;
     try {
       const response = await fetch(
@@ -39,28 +38,35 @@ const Main = () => {
       alert("Unable to fetch weather data. Please try again later.");
     }
   };
+  function capitalizeFirstLetter(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+  }
 
   return (
     <div className="container">
-      <h2>WeatherSnap: {area || "Search for a city"}</h2>
+      <h2>WeatherSnap: {capitalizeFirstLetter(area) || "Search for a city"}</h2>
       <div className="in-con">
         <input type="text" placeholder="Search..." id="in" />
-        <FontAwesomeIcon icon={faMagnifyingGlass} onClick={Change} />
+        <FontAwesomeIcon
+          icon={faMagnifyingGlass}
+          onClick={Change}
+          className="Search"
+        />
       </div>
       {data && (
         <>
-        <MainCon
-          img={data?.weather?.[0]?.icon}
-          temp={data?.main?.temp}
-          main={data?.weather?.[0]?.main}
-          des={data?.weather?.[0]?.description}
-        />
-        <SecCon
-          fl={data?.feels_like}
-          pr={data?.pressure}
-          hum={data?.humidity}
-          sp={data?.wind?.speed}
-        />
+          <MainCon
+            img={data?.weather?.[0]?.icon}
+            temp={data?.main?.temp}
+            main={data?.weather?.[0]?.main}
+            des={data?.weather?.[0]?.description}
+          />
+          <SecCon
+            fl={data?.main?.feels_like}
+            pr={data?.main?.pressure}
+            hum={data?.main?.humidity}
+            sp={data?.wind?.speed}
+          />
         </>
       )}
     </div>
