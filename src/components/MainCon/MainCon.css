@@ -2,7 +2,6 @@
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    color: #333333;
 }
 .icon{
     margin-left: 2.5rem;
